@@ -136,6 +136,9 @@ footer.site-footer{padding-block:36px 120px;display:flex;justify-content:space-b
 .tourbar .tb-step{font:500 12px/1 var(--f-mono);color:var(--muted);padding:0 10px;font-variant-numeric:tabular-nums}
 .tourbar button{font:500 13px/1 var(--f-body);background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 14px;cursor:pointer}
 .tourbar button:hover{border-color:var(--fg)}
+.tourbar button.voice{display:inline-flex;align-items:center;gap:7px}
+.tourbar button.voice.off{border-color:var(--pine);color:var(--pine);font-weight:600;animation:nudge 2.4s ease-in-out 1.5s 3}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(62,90,74,0)}50%{box-shadow:0 0 0 6px rgba(62,90,74,.18)}}
 .tourbar button.primary{background:var(--pine);border-color:var(--pine);color:var(--pine-ink)}
 .tourbar button[aria-pressed="true"]{background:var(--sunk);border-color:var(--fg)}
 .cursor{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--pine);opacity:.35;pointer-events:none;z-index:50;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s}
@@ -152,4 +155,5 @@ footer.site-footer{padding-block:36px 120px;display:flex;justify-content:space-b
 }
 @media (max-width:520px){ form{grid-template-columns:minmax(0,1fr)} }
 @media (pointer:coarse){.cursor{display:none}}
+@media (prefers-reduced-motion:reduce){.tourbar button.voice.off{animation:none}}
 
